@@ -20,6 +20,15 @@ export default function App() {
             {isMale ? <p>Male</p> : <p>Female</p>}
             {isMale && <p>Male</p>}
             {!isMale && <p>Female</p>}
+
+            <p>{student.name}</p>
+            <ul>
+                {colorList.map(
+                    color => (
+                        <li style={{color}}>{color}</li>
+                    )
+                )}
+            </ul>
         </>
     );
 
