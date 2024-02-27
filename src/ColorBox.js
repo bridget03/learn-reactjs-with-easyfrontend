@@ -2,7 +2,7 @@ import React from "react";
 function ColorBox(props) {
   const {color} = props;
   return (
-    <div style={{backgroundColor : color}}></div>
+    <div className="box" style={{backgroundColor : color}}></div>
   );
 }
 
