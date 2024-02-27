@@ -1,11 +1,10 @@
-import ColorBox from "./ColorBox";
 import React from "react";
-import TodoFeature from "./components/features/Todo";
+import AlbumFeature from "./components/features/Album";
 
 export default function App() {
     return (
         <>
-            <TodoFeature/>
+            <AlbumFeature/>
         </>
     );
 
