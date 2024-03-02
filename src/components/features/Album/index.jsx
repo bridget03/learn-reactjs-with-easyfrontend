@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import AlbumList from './components/AlbumList';
 import './components/AlbumList/style.css'
@@ -8,30 +8,48 @@ AlbumFeature.propTypes = {
     
 };
 
-function AlbumFeature(props) {
+export default function AlbumFeature(props) {
     const albumList = [
         {
             id: 1,
-            name: "Buc tranh lem mau",
-            thumbnailUrl: '	https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_jpeg/cover/7/8/f/a/78fa0cf557d26165394e9e1ebf2dadf0.jpg'
+            name: "Top 100 bài hát nhạc trẻ",
+            thumbnailUrl: '	https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/b/2/c/4/b2c4b8cdf46138c56a48be6d4d370b4d.jpg'
         },
         {
             id: 2,
-            name: "Den day thoi",
-            thumbnailUrl: 'https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_jpeg/cover/3/5/0/6/350683b5a0892324a376a133d6708203.jpg'        
+            name: "Top 100 pop Âu Mỹ",
+            thumbnailUrl: 'https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/7/0/7/3/707385004545cb57d81234ebce42d598.jpg'        
         },
         {
             id: 3,
-            name: "Yeu nam",
-            thumbnailUrl: '	https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_jpeg/cover/e/f/4/7/ef47f158028f5b5ea7c561b7f02b8548.jpg'
+            name: "Top 100 nhạc EDM",
+            thumbnailUrl: 'https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/0/7/2/a/072ad73889c625846b27fea36fc12c13.jpg'
         }
     ]
     return (
         <div>
-            <h2>You could like</h2>
+            <h2>Top 100</h2>
             <AlbumList albumList={albumList}/>
+
         </div>
     );
 }
 
-export default AlbumFeature;
+ function ColorBox(props) {
+    const[color, setColor] = useState('white');
+    const[count, setCount] = useState(0);
+
+    return (
+        <div>
+            {color}
+            <br/>
+            {count}
+            <br/>
+            <button onClick={() => setColor('white')}> Change to white</button>
+
+            <button onClick={() => setColor('black')}> Change to black</button>
+
+            <button onClick={() => setCount(x => x + 1)}>click to increase</button>
+        </div>
+    );
+}

@@ -1,30 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import TodoList from './components/TodoList';
+import { Route, Routes } from 'react-router-dom';
+import DetailPage from './pages/DetailPage';
+import ListPage from './pages/ListPage';
 
 TodoFeature.propTypes = {
     
 };
 
 function TodoFeature(props) {
-    const todoList = [
-        {
-            id: 1,
-            title: 'eat'
-        },
-        {
-            id: 2,
-            title: 'code'
-        },
-        {
-            id: 3,
-            title: 'sleep'
-        }
-    ]
+    // const match = matchPath();
+
     return (
         <div>
-            <h2>Todo List</h2>
-            <TodoList todoList={todoList} />
+            Todo Feature
+            <Routes>
+                <Route path='/todo/listpage' element={<ListPage/>}/>
+                <Route path='todo/:todoId' element={<DetailPage/>}/>
+            </Routes>
         </div>
     );
 }
